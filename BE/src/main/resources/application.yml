@@ -1,4 +1,4 @@
 server:
-  port: 7777
+  port: 80
   servlet:
     context-path: /test/api

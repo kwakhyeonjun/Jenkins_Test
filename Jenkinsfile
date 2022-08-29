@@ -49,7 +49,7 @@ pipeline {
             steps {
                 sh 'docker stop test_springboot'
                 sh 'docker rm test_springboot'
-                sh 'docker run --network test -d --name test_springboot -p 7777:7777 -u root test/springboot'
+                sh 'docker run --network test -d --name test_springboot -p 7777:80 -u root test/springboot'
             }
         }
         stage('finish') {
