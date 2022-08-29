@@ -47,8 +47,8 @@ pipeline {
         }
         stage('springboot deploy') {
             steps {
-                // sh 'docker stop test_springboot'
-                // sh 'docker rm test_springboot'
+                sh 'docker stop test_springboot'
+                sh 'docker rm test_springboot'
                 sh 'docker run --network test -d --name test_springboot -p 7777:7777 -u root test/springboot'
             }
         }
