@@ -54,7 +54,7 @@ pipeline {
         }
         stage('finish') {
             steps {
-                sh 'docker restart test/nginx'
+                sh 'docker restart test_nginx/nginx'
                 sh 'docker images -qf dangling=true | xargs -I{} docker rmi {}'
             }
         }
