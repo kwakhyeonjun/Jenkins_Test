@@ -22,7 +22,7 @@ pipeline {
         }
         stage('build nginx image') {
             steps {
-                sh 'docker build -t test/nginx ./FE/ibg'
+                sh 'docker build -t test/nginx ./FE/test'
             }
         }
         stage('nginx deploy') {
