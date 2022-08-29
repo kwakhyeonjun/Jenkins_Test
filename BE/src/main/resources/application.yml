@@ -1,4 +1,4 @@
 server:
   port: 7777
   servlet:
-    context-path: /ibg/api/
+    context-path: /test/api
