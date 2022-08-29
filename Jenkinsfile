@@ -29,7 +29,6 @@ pipeline {
             steps {
                 // sh 'docker stop test_nginx'
                 // sh 'docker rm test_nginx'
-                sh 'docker rm test_nginx'
                 sh 'docker run --network test -d --name test_nginx -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt -u root test/nginx'
             }
         }
