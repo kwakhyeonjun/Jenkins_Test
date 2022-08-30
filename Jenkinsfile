@@ -27,8 +27,10 @@ pipeline {
         }
         stage('nginx deploy') {
             steps {
-                sh 'docker stop test-nginx'
-                sh 'docker rm test-nginx'
+                // sh 'docker stop test-nginx'
+                // sh 'docker rm test-nginx'
+                sh 'docker stop test_nginx'
+                sh 'docker rm test_nginx'
                 sh 'docker run --network test -d --name test-nginx -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt -u root test/nginx'
             }
         }
@@ -47,8 +49,10 @@ pipeline {
         }
         stage('springboot deploy') {
             steps {
-                sh 'docker stop test-springboot'
-                sh 'docker rm test-springboot'
+                // sh 'docker stop test-springboot'
+                // sh 'docker rm test-springboot'
+                sh 'docker stop test_springboot'
+                sh 'docker rm test_springboot'
                 sh 'docker run --network test -d --name test-springboot -p 7777:80 -u root test/springboot'
             }
         }
